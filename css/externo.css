@@ -1,0 +1,7 @@
+*{text-align: center;}
+h3 {color: red;}
+#idtitulo {color: brown;background-color: goldenrod;}
+.amarillo {background-color: yellow;}
+img[src*=".png"] {height: 200px;width: 200px;}
+img[src*=".gif"] {height: 100px;width: 100px;}
+h6:hover{color: aquamarine;background-color: red;}
