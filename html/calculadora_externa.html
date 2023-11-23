@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/calculadora_func.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mi Calculadora</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <section>
+        <label for="num_1">Numero 1: </label>
+        <input type="number" id="num_1">
+        <label for="num_2">Numero 2: </label>
+        <input type="number" id="num_2">
+        <label id="resultado" for=""></label>
+
+        <div id="iddiv">
+        </div>
+    </section>
+
+    <section>
+        <button onclick="sumarNumeros()">SUMAR</button>
+        <button onclick="restarNumeros()">RESTAR</button>
+        <button onclick="multiplicarNumeros()">MULTIPLICAR</button>
+        <button onclick="dividirNumeros()">DIVIDIR</button>
+
+    </section>
+
+    <section>
+        <img src="https://media.giphy.com/media/Kj1mDLLV129Awv1UM8/giphy.gif" alt="etc" id="imagen" style="height: 300px; width: 300px;">
+        <button onclick="cambiarImagen()">Cambiar imagen</button>
+    </section>
+    <footer>
+        Todos los Derechos Reservados Serghy Castillo 2023
+    </footer>
+</body>
+</html>
