@@ -51,4 +51,118 @@ function testearConceptos(){
     console.log('arreglo Numerico:  ' + numeros);
     const diasSemana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
     console.log('arreglo Strings:  ' + diasSemana);
+    console.log('Elemento 0:  ' + diasSemana[0]);
+    diasSemana[5] = 'Sabado'
+    diasSemana.push('Domingo');
+    console.log('arreglo Strings:  ' + diasSemana);
+    diasSemana.unshift('feriado');
+    console.log('arreglo Strings:  ' + diasSemana);
+
+    const numeros_2 = [7,8,9];
+    const concatenado = numeros.concat(numeros_2)
+
+    for ( const dia of diasSemana){
+        
+        if(dia === 'Martes'){
+            console.log('Martes dos por uno')
+        }else{
+            console.log(dia)
+        }
+    }
+
+    //DECLARACION DE OBJETOS
+
+    const estudiante = {
+        nombre :    'Serghy',
+        apellido :  'Castillo',
+        edad :      25,
+        genero :    'M',
+        ciudad :    'Quito' 
+    };
+    console.log('esto es un Objeto: ');
+    console.log(estudiante)
+    console.log('esto es un atributo de un Objeto: ' + estudiante.nombre);
+    estudiante.nombre = 'Omar';
+    console.log('esto es un atributo de un Objeto: ' + estudiante.nombre);
+    
+
+    const persona = {
+        nombre :    'Serghy',
+        apellido :  'Castillo',
+        edad :      25,
+        direccion:  {
+            callePrincipal:     'Hurtado de Mendoza',
+            calleSecundaria:    'Kiruba',
+            numeracion:         'Oe4-67',
+            barrio:             'Quito Sur'
+        },
+    };
+    console.log(persona)
+    console.log(persona.direccion)
+    persona.direccion.numeracion = 'Oe4-66'
+    console.log(persona.direccion)
+
+    //  ARREGLO DE CUATRO PACIENTES QUE TENGAN 3 ATRIBUTOS
+    const pacientes =[
+        {
+            nombre: 'Pedro',
+            apellido: 'Vargas',
+            barrio: 'Quito Sur'
+        },
+        {
+            nombre: 'Alejandro',
+            apellido: 'Macias',
+            barrio: 'Alameda'
+        },
+        {
+            nombre: 'Marcela',
+            apellido: 'Alban',
+            barrio: 'Nueva Aurora'
+        },
+        {
+            nombre: 'Vinicio',
+            apellido: 'Montenegro',
+            barrio: 'BarrioNuevo'
+        }
+    ];
+    console.table(pacientes);
+    console.log(pacientes[0].nombre)
+    console.log(pacientes.pop())
+    console.table(pacientes);
+
+    // DESESTRUCTURACION DE UN ARREGLO
+
+    // const nuevosDias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
+    // const [a,b,c,d,e] = nuevosDias
+    // console.log(a)
+    // console.log(e)
+
+    const [a,b,c,d,e] = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
+    console.log(a)
+    console.log(e)
+
+    // DESESTRUCTURACION DE OBJETOS
+    const vehiculo ={
+        marca:'Toyota',
+        modelo:'Prius',
+        anio:2023
+    };
+    const {marca,modelo,anio} = vehiculo;
+    console.log(marca)
+    console.log(anio)
+
+    // EN UNA SOLA LINEA DECLARAR EL ONJETO CON 3 ATRIBUTOS CON OTRO ONJETO CON 
+    // 3 ATRIBUTOS  Y DESESTRUCTURAR A AMBOS OBJETOS
+
+    const alimento ={
+        nombre:     'banana',
+        tipo:       'Fruta',
+        valorNutricional: {
+            calorias:   20,
+            vitamina:   'B2',
+            proteinas:  1.2,
+        }
+    }
+    const {nombre, tipo, valorNutricional: {calorias,vitamina,proteinas}} = { nombre:'banana', tipo:'Fruta',valorNutricional:{calorias:20,vitamina:'B2',proteinas:1.2}};
+    console.log(proteinas)
 }
