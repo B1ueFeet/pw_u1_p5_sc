@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(1,500);
+    background: green;
+    border-radius: 15px;
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.342);
+    padding: 20px;
+}
+
+.resultados{
+    display: grid;
+    grid-template-columns: repeat(1,500);
+    background: green;
+    border-radius: 15px;
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.342);
+}
+
+.numeros{
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    background: blue;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.operaciones{
+    display: grid;
+    grid-template-columns: repeat(2,150px);
+    background: red;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.dos_col{
+    grid-column: span 3;
+}
+
+button{
+    margin: 3px;
+}
+
+label{
+    height: 20px;
+}

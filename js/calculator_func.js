@@ -15,19 +15,22 @@ const btn_div = () => document.getElementById("lbl_prev").innerText = document.g
 const btn_AC = () => document.getElementById("lbl_prev").innerText = ""
 const resultado = () => {
     let arr = document.getElementById('lbl_prev').innerText.split(' ');
-
     console.log(arr)
+    if (arr[arr.length - 1] === "") {
+        console.log(arr.pop())
+    }
+
     if (arr[0] === "" || arr[0] === '+' || arr[0] === '-' || arr[0] === '/' || arr[0] === '*') {
         btn_AC()
         document.getElementById('lbl_res').innerText = 'error'
-    } else {
-        let result;
+    }else {
         let num;
         let operator;
         for (let element of arr) {
-            if (!isNaN(element) ) {
+            if (!isNaN(element)) {
                 if (num === undefined) {
-                    num = parseInt(element);
+                    num = parseInt(toString(num) + element);
+                    console.log(num)
                 } else {
                     if (operator === "+") {
                         num += parseInt(element);
@@ -35,13 +38,12 @@ const resultado = () => {
                         num -= parseInt(element);
                     } else if (operator === "*") {
                         num = num * parseInt(element);
-                    }else if (operator === "/") {
+                    } else if (operator === "/") {
                         num = num / parseInt(element)
                     }
                 }
-            } else if(element === ''){
-
-            }else {
+    
+            } else {
                 operator = element;
             }
         }
@@ -49,3 +51,25 @@ const resultado = () => {
     }
 }
 
+
+/* else{
+    let numeros = []
+    let signos =[]
+    for (let i = 0; i < arr.length; i++) {
+        if (i > 0 && !isNaN(arr[i]) && !isNaN(arr[i - 1])) {
+          numeros[numeros.length - 1] += arr[i];
+        } else if (!isNaN(arr[i])) {
+          numeros.push(arr[i]);
+        } else {
+          signos.push(arr[i]);
+        }
+      }
+    console.log(numeros)
+    console.log(signos)
+    let num_1 = 0;
+    let num_2 = 0;
+    for(let op of signos){
+        num_1 = 0
+    }
+
+} */
