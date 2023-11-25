@@ -4,58 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function sumaNumeros(a, b){
-            var resultado = parseInt(a)+parseInt(b)
-            console.log('Funcion sumar /nResultado: ' + resultado)
-            document.getElementById('resultado_2').innerText = resultado
-            return resultado;
-        }
-        function restaNumeros(a,b){
-            console.log('Restar numeros')
-            return a-b;
-        }
-
-        function sumarNumerosCompleto(){
-            var resultado = parseInt(document.getElementById('num_1').value)+ parseInt(document.getElementById('num_2').value)
-            console.log('Funcion sumar /nResultado: ' + resultado)
-            document.getElementById('resultado_2').innerText = resultado
-            return resultado;
-        }
-    </script>
+    <script src="../js/calculator_func.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Mi Calculadora</h1>
-    </header>
-    <nav>
-
-    </nav>
+    <Section>
+        <button onclick="btn_uno()"> 1 </button>
+        <button onclick="btn_dos()"> 2 </button>
+        <button onclick="btn_tres()"> 3 </button>
+        <button onclick="btn_cuatro()"> 4 </button>
+        <button onclick="btn_cinco()"> 5 </button>
+        <button onclick="btn_seis()"> 6 </button>
+        <button onclick="btn_siete()"> 7 </button>
+        <button onclick="btn_ocho()"> 8 </button>
+        <button onclick="btn_nueve()"> 9 </button>
+        <button onclick="btn_cero()"> 0 </button>
+    </Section>    
     <section>
-        <label for="num_1">Numero 1: </label>
-        <input type="number" id="num_1">
-        <label for="num_2">Numero 2: </label>
-        <input type="number" id="num_2">
-        <button onclick="document.getElementById('num_1').style.color = 'blue'">Cambiar Estilo 1</button>
-        <button onclick="document.getElementById('num_2').style.background = 'aqua'">Cambiar Estilo 2</button>
-        <button onclick="document.getElementById('resultado').innerHTML = 2*3">Presentar Resultado</button>
-        <button onclick="document.getElementById('iddiv').innerHTML = '<button>Hola</button>'">Agregar elemento</button>
-        <label id="resultado" for=""></label>
-        <div id="iddiv">
-            
-        </div>
-        <h2>Js Interno</h2>
-        <button onclick="sumaNumeros(getElementById('num_1').value, getElementById('num_2').value)">SUMAR INTERNO INCORRECTO</button>
-        <label id="resultado_2" for=""></label>
-        <button onclick="sumarNumerosCompleto()">SUMAR INTERNO COMPLETO</BUtton>
+        <button onclick="btn_suma()" id="btn_+"> + </button>
+        <button onclick="btn_resta()"> - </button>
+        <button onclick="btn_mult()"> * </button>
+        <button onclick="btn_div()"> / </button>
+        <button onclick="btn_AC()"> AC </button>
+        <button onclick="resultado()"> = </button>
     </section>
-
     <section>
-        <img src="https://media.giphy.com/media/Kj1mDLLV129Awv1UM8/giphy.gif" alt="etc" id="imagen" style="height: 300px; width: 300px;">
-        <button onclick="document.getElementById('imagen').src = 'https://media.giphy.com/media/uq8GNnRxe7AlViDETx/giphy.gif'">Cambiar imagen</button>
+        <label for="" id="lbl_prev"></label>
+        <label for="" id="lbl_res"></label>
     </section>
-    <footer>
-        Todos los Derechos Reservados Serghy Castillo 2023
-    </footer>
 </body>
 </html>
