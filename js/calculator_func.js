@@ -23,53 +23,68 @@ const resultado = () => {
     if (arr[0] === "" || arr[0] === '+' || arr[0] === '-' || arr[0] === '/' || arr[0] === '*') {
         btn_AC()
         document.getElementById('lbl_res').innerText = 'error'
-    }else {
-        let num;
-        let operator;
-        for (let element of arr) {
-            if (!isNaN(element)) {
-                if (num === undefined) {
-                    num = parseInt(toString(num) + element);
-                    console.log(num)
-                } else {
-                    if (operator === "+") {
-                        num += parseInt(element);
-                    } else if (operator === "-") {
-                        num -= parseInt(element);
-                    } else if (operator === "*") {
-                        num = num * parseInt(element);
-                    } else if (operator === "/") {
-                        num = num / parseInt(element)
-                    }
-                }
-    
+    } else {
+        let numeros = []
+        let signos = []
+        for (let i = 0; i < arr.length; i++) {
+            if (i > 0 && !isNaN(arr[i]) && !isNaN(arr[i - 1])) {
+                numeros[numeros.length - 1] += arr[i];
+            } else if (!isNaN(arr[i])) {
+                numeros.push(arr[i]);
             } else {
-                operator = element;
+                signos.push(arr[i]);
             }
         }
-        document.getElementById('lbl_res').innerText = num
+        console.log(numeros)
+        console.log(signos)
+        let resultado = parseInt(numeros[0]);
+
+        for (let i = 1; i < numeros.length; i++) {
+            const signo = signos[(i - 1) % signos.length];
+            const numero = parseInt(numeros[i]);
+            if (signo === '+') {
+                resultado += numero;
+            } else if (signo === '*') {
+                resultado *= numero;
+            } else if (signo === '/') {
+                resultado /= numero;
+            } else if (signo === '-') {
+                resultado -= numero;
+            }
+        }
+        document.getElementById('lbl_res').innerText = resultado
+        console.log(resultado);
+
     }
 }
 
 
-/* else{
-    let numeros = []
-    let signos =[]
-    for (let i = 0; i < arr.length; i++) {
-        if (i > 0 && !isNaN(arr[i]) && !isNaN(arr[i - 1])) {
-          numeros[numeros.length - 1] += arr[i];
-        } else if (!isNaN(arr[i])) {
-          numeros.push(arr[i]);
-        } else {
-          signos.push(arr[i]);
-        }
-      }
-    console.log(numeros)
-    console.log(signos)
-    let num_1 = 0;
-    let num_2 = 0;
-    for(let op of signos){
-        num_1 = 0
-    }
 
+
+/* 
+else {
+    let num;
+    let operator;
+    for (let element of arr) {
+        if (!isNaN(element)) {
+            if (num === undefined) {
+                num = parseInt(toString(num) + element);
+                console.log(num)
+            } else {
+                if (operator === "+") {
+                    num += parseInt(element);
+                } else if (operator === "-") {
+                    num -= parseInt(element);
+                } else if (operator === "*") {
+                    num = num * parseInt(element);
+                } else if (operator === "/") {
+                    num = num / parseInt(element)
+                }
+            }
+
+        } else {
+            operator = element;
+        }
+    }
+    document.getElementById('lbl_res').innerText = num
 } */

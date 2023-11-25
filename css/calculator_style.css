@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+*{
+    color: white;
+/*     font-weight: bold; */
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    background-color: #E6EFF6;
+}
 .container{
     display: flex;
     justify-content: center;
@@ -7,24 +17,26 @@
 .calculator{
     display: grid;
     grid-template-columns: repeat(1,500);
-    background: green;
+    background: #253532;
     border-radius: 15px;
     box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.342);
     padding: 20px;
 }
 
 .resultados{
-    display: grid;
-    grid-template-columns: repeat(1,500);
-    background: green;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: #517f83;
     border-radius: 15px;
-    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.342);
+    margin: 10px 0px;
+
 }
 
 .numeros{
     display: grid;
     grid-template-columns: repeat(3,100px);
-    background: blue;
+/*     background: blue; */
     padding: 10px;
     border-radius: 15px;
 }
@@ -32,19 +44,34 @@
 .operaciones{
     display: grid;
     grid-template-columns: repeat(2,150px);
-    background: red;
+/*     background: red; */
     padding: 10px;
     border-radius: 15px;
 }
 
-.dos_col{
+.tres_col{
     grid-column: span 3;
 }
 
 button{
     margin: 3px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #9E8D77;
+    border: none;
+
+}
+button:hover{
+    background-color: #583D34;
+}
+button:active{
+    background-color: #517F83;
 }
 
+
 label{
-    height: 20px;
+    height: 30px;
+    padding: 0px 20px;
+    align-items: center;
 }
+
