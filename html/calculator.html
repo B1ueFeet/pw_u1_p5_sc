@@ -7,6 +7,7 @@
     <title>Calculator</title>
     <link rel="icon" type="image/x-icon" href="../img/calculadora.ico">
     <link rel="stylesheet" href="../css/calculator.css">
+    <script src = "../js/calculator.js"></script>
 </head>
 
 <body>
@@ -17,30 +18,33 @@
         <nav></nav>
         <section>
             <div class="calculator">
-                <div class="display">Resultado:</div>
-                <button>C</button>
-                <button>&#129136;</button>
-                <button>&#37;</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>&#215;</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>&#8722;</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>&#43;</button>
-                <button>0</button>
-                <button>&#46;</button>
-                <button>&#61;</button>
+                <div class="display">
+                    <label for="" id="lbl_prev"></label>
+                    <label for="" id="lbl_res"></label>
+                </div>
+                <button onclick="btn_AC()" class="span_2">C</button>
+                <button onclick="btn_borrar()" >&#129136;</button>
+                <button onclick="btn_div()" >&#247;</button>
+                <button onclick="btn_siete()" >7</button>
+                <button onclick="btn_ocho()" >8</button>
+                <button onclick="btn_nueve()" >9</button>
+                <button onclick="btn_mult()" >&#215;</button>
+                <button onclick="btn_cuatro()" >4</button>
+                <button onclick="btn_cinco()" >5</button>
+                <button onclick="btn_seis()" >6</button>
+                <button onclick="btn_resta()" >&#8722;</button>
+                <button onclick="btn_uno()" >1</button>
+                <button onclick="btn_dos()" >2</button>
+                <button onclick="btn_tres()" >3</button>
+                <button onclick="btn_suma()" >&#43;</button>
+                <button onclick="btn_cero()"  class="span_2">0</button>
+                <button onclick="btn_punto()" >&#46;</button>
+                <button onclick="resultado()" >&#61;</button>
             </div>
         </section>
     </div>
-        <footer>all rights reserved BlueFeet &#169;</footer>
-    
+    <footer>all rights reserved BlueFeet &#169;</footer>
+
 
 
 </body>
