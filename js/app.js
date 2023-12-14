@@ -1,6 +1,18 @@
 console.log("elementos vue");
 console.log(Vue);
 
+/*  DECLARACION DE ARREGLOS */
+const estudiantes = [
+  { nombre: 'Serghy', apellido: 'Castillo' },
+  { nombre: 'Edison', apellido: 'Manchego' },
+  { nombre: 'Andrea', apellido: 'Mayorga' },
+  { nombre: 'Emilia', apellido: 'Quevedo' },
+  { nombre: 'Reymon', apellido: 'Hidalgo' }
+]
+
+console.log(estudiantes)
+console.table(estudiantes)
+
 const app = Vue.createApp({
   /*para que Vue reconozco el código javascript usamos las llaves en el lambda
   /*  template:`
@@ -12,6 +24,8 @@ const app = Vue.createApp({
     <p>{{false? "verdadero ; 'falso'"}}</p>
     `
     */
+
+
   /*OPTIONS API */
   methods: {
     cambiarMensaje() {
@@ -19,18 +33,43 @@ const app = Vue.createApp({
       console.log(this.mensaje);
       this.mensaje = "Valor cambiado: :)";
     },
-  sumar() {
-    console.log("Sumando...");
-    console.log(this.valor);
-    this.valor++;
-  }
+    sumar() {
+      console.log("Sumando...");
+      console.log(this.valor);
+      this.valor++;
+    },
+    agregarEstudiante(){
+      console.log('Agregando Estudiante')
+      /* PARA AGREGAR ELEMENTOS AL INICIO */
+      this.lista.unshift({nombre: this.nombre, apellido: this.apellido})
+      /* PARA AGREGAR ELEMENTOS AL FINAL
+      this.lista.push({nombre: this.nombre, apellido: this.apellido}) */
+      console.table(this.lista)
+    },
+
+    keyPress(event, id){
+      console.log('presionando:')
+      console.log(event.charCode)
+      if(event.charCode === 13 ){
+        this.agregarEstudiante()
+      }
+      
+      
+    }
   },
+
+
   watch: {},
+
+
   /*Controlamos el modelo con data; con sus Propiedades reactivas*/
   data() {
     return {
-      mensaje: "Hola mundo desde Vue.js",
-      valor: 100,
+      mensaje:    "Hola mundo desde Vue.js",
+      valor:      100,
+      lista:      estudiantes,
+      nombre:     null,
+      apellido:   null
     };
   },
 });
