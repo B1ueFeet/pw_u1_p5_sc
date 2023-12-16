@@ -29,22 +29,25 @@
       <!--Directivas de Vue para diferentes funcionalidades en este caso, de el evento v-on-->
       <button v-on:click="cambiarMensaje()">Set Message</button>
       <button v-on:click="sumar()">Plus</button>
-      
+
       </hr>
 
       <p>{{lista}}</p>
       <label for="inpt_nombre">Nombre</label>
-      <input type="text" id="inpt_nombre" v-model = "nombre">
+      <input type="text" id="inpt_nombre" v-model="nombre">
       <label for="inpt_nombre">Apellido</label>
-      <input type="text" id="inpt_nombre" v-model = "apellido" v-on:keypress = "keyPress">
-      <button v-on:click = "agregarEstudiante()">Agregar</button>
+      <input type="text" id="inpt_nombre" v-model="apellido" @keypress.enter="keyPress">
+      <button v-on:click="agregarEstudiante()">Agregar</button>
       {{nombre}} {{apellido}}
       <ul>
         <li v-for="({nombre,apellido}, index) in lista">
-          {{index+1}}
-          {{nombre}}
-          {{apellido}}
-          <button>Editar</button>
+          <p v-if="nombre !== ''">
+            {{index+1}}
+            {{nombre}}
+            {{apellido}}
+            <button>Editar</button>
+          </p>
+
         </li>
       </ul>
     </div>

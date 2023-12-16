@@ -41,20 +41,22 @@ const app = Vue.createApp({
     agregarEstudiante(){
       console.log('Agregando Estudiante')
       /* PARA AGREGAR ELEMENTOS AL INICIO */
-      this.lista.unshift({nombre: this.nombre, apellido: this.apellido})
-      /* PARA AGREGAR ELEMENTOS AL FINAL
-      this.lista.push({nombre: this.nombre, apellido: this.apellido}) */
-      console.table(this.lista)
+      /* this.lista.unshift({nombre: this.nombre, apellido: this.apellido}) */
+      /* PARA AGREGAR ELEMENTOS AL FINAL*/
+      this.lista.push({nombre: this.nombre, apellido: this.apellido}) 
+      console.log(this.nombre)
     },
 
-    keyPress(event, id){
+    keyPress({charCode}){
       console.log('presionando:')
-      console.log(event.charCode)
-      if(event.charCode === 13 ){
+      console.log(charCode)
+      if(charCode === 13 ){
+        console.log(this.nombre)
         this.agregarEstudiante()
       }
-      
-      
+    },
+    keyPressM(){
+      console.log('presionando:')
     }
   },
 
@@ -68,8 +70,8 @@ const app = Vue.createApp({
       mensaje:    "Hola mundo desde Vue.js",
       valor:      100,
       lista:      estudiantes,
-      nombre:     null,
-      apellido:   null
+      nombre:     undefined,
+      apellido:   undefined
     };
   },
 });

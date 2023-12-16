@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+    <section>
+        <div class="container"></div>
+        <form action="">
+            <label for="inpt_nombre">Nombre</label>
+            <input type="text" id="inpt_nombre" v-model="nombre">
+            <label for="inpt_nombre">Apellido</label>
+            <input type="text" id="inpt_nombre" v-model="apellido">
+            <label for="inpt_edad">Apellido</label>
+            <input type="text" id="inpt_edad" v-model="edad">
+            <button v-on:click="agregarEstudiante()">Agregar</button>
+        </form>
+        
+    </section>
+
+</body>
+
+</html>
