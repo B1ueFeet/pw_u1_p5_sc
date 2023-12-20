@@ -6,23 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../css/form_est.css">
 </head>
 
 <body>
     <header></header>
     <nav></nav>
     <section>
-        <div class="container"></div>
-        <form action="">
-            <label for="inpt_nombre">Nombre</label>
-            <input type="text" id="inpt_nombre" v-model="nombre">
-            <label for="inpt_nombre">Apellido</label>
-            <input type="text" id="inpt_nombre" v-model="apellido">
-            <label for="inpt_edad">Apellido</label>
-            <input type="text" id="inpt_edad" v-model="edad">
-            <button v-on:click="agregarEstudiante()">Agregar</button>
-        </form>
-        
+        <div class="container" id="myForm">
+            <div class="form">
+                <!-- <form action=""> -->
+                <h2>Nuevo Estudiante</h2>
+                <p type="Nombre"><input type="text" v-model="nombre"></p>
+                <p type="Apellido"><input type="text"  v-model="apellido"></p>
+                <p type="Edad"><input type="text" v-model="edad"></p>
+                <button v-on:click="agregarEstudiante()">Agregar</button>
+                <!-- </form> -->
+            </div>
+            <div class="tabla">
+                <table>
+                    <tr >
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>EDAD</th>
+                        <th></th>
+                    </tr>
+                    <tr v-for="({nombre,apellido,edad}, index) in lista ">
+                        <td class="id" >{{index+1}}</td>
+                        <td> {{nombre}}</td>
+                        <td>{{apellido}}</td>
+                        <td>{{edad}}</td>
+                        <td><button> Editar</button></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <script src="../js/app_est.js"></script>
     </section>
 
 </body>

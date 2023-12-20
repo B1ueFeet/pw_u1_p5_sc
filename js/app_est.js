@@ -15,6 +15,14 @@ const app = Vue.createApp({
 
   /*OPTIONS API */
   methods: {
+    agregarEstudiante(){
+      console.log('Agregando Estudiante')
+      /* PARA AGREGAR ELEMENTOS AL INICIO */
+      /* this.lista.unshift({nombre: this.nombre, apellido: this.apellido}) */
+      /* PARA AGREGAR ELEMENTOS AL FINAL*/
+      this.lista.push({nombre: this.nombre, apellido: this.apellido, edad: this.edad}) 
+      console.log(this.nombre)
+    },
   },
 
 
@@ -30,4 +38,4 @@ const app = Vue.createApp({
     };
   },
 });
-app.mount("#myApp");
+app.mount("#myForm");
